@@ -1,27 +1,37 @@
 export default function Home() {
   return (
     <div className="flex flex-col">
-      {/* ===== HERO SECTION (dark bg) ===== */}
-      <section className="bg-background text-foreground flex flex-col items-center justify-center py-20 px-6 text-center">
-        <img
-          src="/images/logo.png"
-          alt="La Lumbre Artisan Pizza logo"
-          className="w-48 md:w-64 mb-8"
+      {/* ===== HERO SECTION (dark bg with background image) ===== */}
+      <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/pizzeria-hero.jpg')" }}
         />
-        <h1 className="font-serif text-4xl md:text-6xl font-bold mb-6 text-accent">
-          Brick Oven Pizzeria on Wheels!
-        </h1>
-        <a
-          href="tel:9516912329"
-          className="inline-block bg-accent hover:bg-accent-hover text-light-text font-bold text-lg md:text-xl px-8 py-4 rounded-full transition-colors mb-4"
-        >
-          Tap here to call and book us for your event!
-        </a>
-        <p className="text-xl md:text-2xl font-sans mt-2">
-          <a href="tel:9516912329" className="text-accent hover:underline">
-            951-691-2329
+        <div className="absolute inset-0 bg-black/65" />
+
+        {/* Content */}
+        <div className="relative z-10 px-6 py-20">
+          <img
+            src="/images/lumbre-logo.png"
+            alt="La Lumbre Artisan Pizza logo"
+            className="w-48 md:w-64 mb-8 mx-auto drop-shadow-lg"
+          />
+          <h1 className="font-serif text-4xl md:text-6xl font-bold mb-6 text-accent drop-shadow-md">
+            Brick Oven Pizzeria on Wheels!
+          </h1>
+          <a
+            href="tel:9516912329"
+            className="inline-block bg-accent hover:bg-accent-hover text-light-text font-bold text-lg md:text-xl px-8 py-4 rounded-full transition-colors mb-4"
+          >
+            Tap here to call and book us for your event!
           </a>
-        </p>
+          <p className="text-xl md:text-2xl font-sans mt-2 text-white">
+            <a href="tel:9516912329" className="text-accent hover:underline">
+              951-691-2329
+            </a>
+          </p>
+        </div>
       </section>
 
       {/* ===== WOW YOUR GUESTS (light bg) ===== */}
@@ -50,8 +60,8 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
               <img
-                src="/images/pizza-oven.jpg"
-                alt="La Lumbre brick oven pizza being prepared"
+                src="/images/pizza-oven-wheels.jpg"
+                alt="La Lumbre mobile brick oven pizza on wheels"
                 className="rounded-2xl shadow-lg w-full max-w-md object-cover"
               />
             </div>
@@ -68,8 +78,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="flex justify-center">
               <img
-                src="/images/charcuterie.png"
-                alt="Charcuterie board by La Lumbre"
+                src="/images/charcuterie-pizza.png"
+                alt="Charcuterie and pizza spread by La Lumbre"
                 className="rounded-2xl shadow-lg w-full max-w-md object-cover"
               />
             </div>
@@ -87,6 +97,68 @@ export default function Home() {
               <p>
                 Give us a call to discuss your event and we will build the
                 perfect menu together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FOOD GALLERY (light bg) ===== */}
+      <section className="bg-light-bg text-light-text py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-center mb-12 text-accent">
+            Our Food
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="/images/pizzeria-food-1.jpg"
+              alt="La Lumbre artisan pizza"
+              className="rounded-xl shadow-md w-full aspect-square object-cover"
+            />
+            <img
+              src="/images/pizzeria-food-2.jpg"
+              alt="Wood fire pizza fresh from the oven"
+              className="rounded-xl shadow-md w-full aspect-square object-cover"
+            />
+            <img
+              src="/images/pizzeria-food-3.jpg"
+              alt="La Lumbre specialty pizza"
+              className="rounded-xl shadow-md w-full aspect-square object-cover"
+            />
+            <img
+              src="/images/pizzeria-setup.jpg"
+              alt="La Lumbre catering setup"
+              className="rounded-xl shadow-md w-full aspect-square object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== MEET THE TEAM (dark bg) ===== */}
+      <section className="bg-background text-foreground py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-center mb-12 text-accent">
+            Meet the Team
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="flex justify-center">
+              <img
+                src="/images/father-son-team.png"
+                alt="The La Lumbre father and son team"
+                className="rounded-2xl shadow-lg w-full max-w-md object-cover"
+              />
+            </div>
+            <div className="space-y-5 text-lg leading-relaxed">
+              <p>
+                La Lumbre is a true family affair. Our father-and-son team brings
+                decades of passion for authentic wood fire cooking to every
+                event.
+              </p>
+              <p>
+                From hand-stretching dough to stoking the flames of our brick
+                oven, every pizza is made with care and pride. When you hire La
+                Lumbre, you are not just getting catering &mdash; you are getting
+                a family that loves what they do.
               </p>
             </div>
           </div>
