@@ -3,20 +3,23 @@ export default function Home() {
     <div className="flex flex-col">
       {/* ===== SECTION 0: HERO ===== */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center">
-        {/* Background image - pizzeria_75.jpg from original */}
+        {/* Background: pizzeria_75.jpg with blue gradient overlay from original Divi CSS */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/pizzeria_75.jpg')" }}
+          style={{
+            backgroundImage: "url('/images/pizzeria_75.jpg'), linear-gradient(330deg, #2ea3f2 0%, #2e6df4 100%)",
+          }}
         />
-        {/* Original uses a gradient overlay: linear-gradient(330deg, #2ea3f2 0%, #2e6df4 100%) at low opacity */}
-        <div className="absolute inset-0 bg-black/40" />
+        {/* Very subtle darkening just for text readability */}
+        <div className="absolute inset-0 bg-black/15" />
 
         {/* Content */}
-        <div className="relative z-10 px-6 py-20 flex flex-col items-center">
+        <div className="relative z-10 px-6 py-20 flex flex-col items-center w-full">
+          {/* Logo: original is 58% width on desktop */}
           <img
             src="/images/lumbre-logo.png"
             alt="La Lumbre Artisan Pizza logo"
-            className="w-72 md:w-96 lg:w-[460px] mb-10 mx-auto drop-shadow-lg"
+            className="w-[70%] md:w-[58%] max-w-[580px] mb-10 mx-auto drop-shadow-lg"
           />
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white drop-shadow-md leading-tight"
@@ -47,13 +50,13 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 1: WOW YOUR GUESTS ===== */}
-      {/* Original: background-image pizzeria_31.jpg, two-column layout */}
+      {/* Original: pizzeria_31.jpg stone texture, clearly visible */}
       <section className="relative py-20 px-6">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/pizzeria_31.jpg')" }}
         />
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/55" />
 
         <div className="relative z-10 max-w-5xl mx-auto">
           {/* WOW heading - full width */}
@@ -66,7 +69,7 @@ export default function Home() {
 
           {/* Row 1: Text LEFT | Pizza oven image RIGHT */}
           <div className="flex flex-col md:flex-row gap-10 mb-16">
-            <div className="md:w-1/2 space-y-6 text-base md:text-lg leading-relaxed text-white/90"
+            <div className="md:w-1/2 space-y-6 text-white/90"
               style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: "20px", lineHeight: "1.8em" }}
             >
               <p>
@@ -113,7 +116,7 @@ export default function Home() {
               >
                 How to Order
               </h1>
-              <div className="space-y-6 text-base md:text-lg leading-relaxed text-white/90"
+              <div className="space-y-6 text-white/90"
                 style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: "20px", lineHeight: "1.8em" }}
               >
                 <p>
@@ -143,7 +146,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/pizzeria_31.jpg')" }}
         />
-        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h1
@@ -152,13 +155,13 @@ export default function Home() {
           >
             Book your event!
           </h1>
-          <p className="text-base md:text-lg leading-relaxed text-white/90 mb-4"
+          <p className="text-white/90 mb-4"
             style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: "20px", lineHeight: "1.8em" }}
           >
             We also sell individual pizzas at events like schools, fundraisers,
             churches, carnivals, festivals, and recreational parks!
           </p>
-          <p className="text-base md:text-lg leading-relaxed text-white/90"
+          <p className="text-white/90"
             style={{ fontFamily: "'Montserrat', Helvetica, Arial, sans-serif", fontSize: "20px", lineHeight: "1.8em" }}
           >
             Text us at{" "}
@@ -179,11 +182,12 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/pizzeria_31.jpg')" }}
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
+          {/* Non-italic, single line */}
           <h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 italic"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 whitespace-nowrap"
             style={{
               fontFamily: "'Fraunces', Georgia, 'Times New Roman', serif",
               color: "#e09900",
@@ -192,7 +196,7 @@ export default function Home() {
             Don&apos;t forget to follow and like us!
           </h1>
 
-          {/* Social media icons */}
+          {/* Social media icons - round circles like clone v1, with correct Yelp */}
           <div className="flex justify-center gap-4">
             <a
               href="https://www.facebook.com/lalumbreartisanpizza"
@@ -223,8 +227,9 @@ export default function Home() {
               className="w-12 h-12 rounded-full bg-[#af0606] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Follow on Yelp"
             >
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 011.596-.206 7.467 7.467 0 011.91 3.1c.238.682-.24 1.611-.24 1.611zm-3.01 5.836a1.072 1.072 0 01-1.39.79 7.466 7.466 0 01-2.855-2.14s-.462-.688-.128-1.37l2.344-4.654c.513-.87 1.752-.486 1.87.58l.615 5.247a1.07 1.07 0 01-.456 1.547zm-6.86-1.658c.073 1.013-1.067 1.633-1.722.935L5.02 13.96a1.072 1.072 0 01.134-1.606 7.466 7.466 0 013.28-1.488c.714-.13 1.39.48 1.39.48l.466 5.426zm-1.86-8.152c-.344.953-1.617.95-1.923-.004L4.926 3.51a1.072 1.072 0 01.79-1.39 7.466 7.466 0 013.592.082c.688.221.988.95.988.95l-.866 5.468zm2.503-1.47c.7-.72 1.813-.11 1.68.92l-.68 5.233c-.13.98-1.425 1.2-1.954.336L7.3 9.764a1.072 1.072 0 01.206-1.596A7.466 7.466 0 0110.72 6.6s.66-.155 1.213.55z" />
+              {/* Yelp burst logo */}
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.271 10.226c-.278-.625-.109-1.065.577-1.509l3.984-2.574c.564-.365 1.06-.37 1.338.094.253.42.107.992-.197 1.463l-2.647 3.94c-.425.612-.899.579-1.409.023l-1.646-1.437zM11.036 12.078c-.266.636-.72.77-1.398.34l-3.791-2.665c-.51-.358-.637-.893-.252-1.38.349-.441.944-.465 1.504-.265l4.207 1.52c.716.264.803.756.517 1.478l-.787.972zM11.3 14.536c.637.24.79.696.422 1.392l-2.02 3.902c-.3.564-.784.736-1.305.397-.473-.307-.528-.892-.369-1.457l1.35-4.282c.223-.73.68-.877 1.374-.589l.548.637zM13.52 13.96c.192-.667.629-.84 1.366-.558l4.095 1.66c.568.228.78.702.523 1.258-.233.504-.802.604-1.388.526l-4.34-.84c-.732-.132-.87-.594-.678-1.306l.422-.74zM12.432 11.49c.675.09.888.509.698 1.251l-.05.21c-.203.674-.634.868-1.328.656l-.202-.073c-.666-.255-.846-.7-.55-1.36l.082-.17c.312-.597.756-.697 1.35-.514z"/>
               </svg>
             </a>
           </div>
